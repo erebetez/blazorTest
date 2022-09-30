@@ -1,5 +1,4 @@
 using Xunit;
-using MyBlazorApp;
 
 namespace MyBlazorApp.Tests;
 
