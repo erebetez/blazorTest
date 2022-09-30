@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "VqpcNjPEzVyOZ6CvAGXs1PPfmcpCG6I2IlEmk8kaq9mObpRYk8sGLCwZtqAsXBxQlgSed9xI70MEAAFrbV/2bw==",
+  "success": true,
+  "projectFilePath": "/home/etienne/Data/Programming/dotnet/blazor/MyBlazorApp/MyBlazorApp.csproj",
+  "expectedPackageFiles": [
+    "/home/etienne/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.9/microsoft.aspnetcore.app.ref.6.0.9.nupkg.sha512"
+  ],
+  "logs": []
+}
