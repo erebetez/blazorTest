@@ -106,15 +106,22 @@ public class UnitTest_Assays
 
         List<RawDataItem> consumptions = foundAssayItem.RawData.FindAll(raw => raw.Id.Equals("Consumption"));
 
-        float sumResult = consumptions.Aggregate(0, (float acc, RawDataItem next) => acc + next.Number.Value, sum => sum);
+        float sumResult1 = consumptions.Aggregate(0, (float acc, RawDataItem next) => acc + next.Number.Value, sum => sum);
 
-        Assert.Equal(10, sumResult);
+        Assert.Equal(10, sumResult1);
+
+        float sumResult2 = consumptions.Sum(v => v.Number.Value);
+
+        Assert.Equal(10, sumResult2);
+
+
+        Assert.Throws<System.NullReferenceException>(() => foundAssayItem.RawData.Find(raw => raw.Id.Equals("Sum")).Number.Value);
 
 
         foundAssayItem.RawData.Add(new RawDataItem()
         {
             Id = "Sum",
-            Number = new FormatedNumber() { Value = sumResult, Unit = "mL" }
+            Number = new FormatedNumber() { Value = sumResult1, Unit = "mL" }
         });
 
 
