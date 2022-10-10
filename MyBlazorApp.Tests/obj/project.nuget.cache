@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "KUBjQ69ZNEiCQ++JOB5F/+pfr8cjFJXablxKT+hEz/aIdUarWPzM2MB5B0VrzOV1xTXsMpbSsCevibzigN2/lA==",
+  "dgSpecHash": "tWJbdCiPPD3FypVlBnarhIpP3etU+MlKjIMouPsq9Ljg3k4fDkZNQB4mzwwXxntPK4rJSizXaxWR9ZCz5AyjsA==",
   "success": true,
   "projectFilePath": "/home/etienne/Data/Programming/dotnet/blazor/MyBlazorApp.Tests/MyBlazorApp.Tests.csproj",
   "expectedPackageFiles": [
     "/home/etienne/.nuget/packages/coverlet.collector/3.1.0/coverlet.collector.3.1.0.nupkg.sha512",
+    "/home/etienne/.nuget/packages/junitxml.testlogger/3.0.114/junitxml.testlogger.3.0.114.nupkg.sha512",
     "/home/etienne/.nuget/packages/microsoft.codecoverage/16.11.0/microsoft.codecoverage.16.11.0.nupkg.sha512",
     "/home/etienne/.nuget/packages/microsoft.csharp/4.0.1/microsoft.csharp.4.0.1.nupkg.sha512",
     "/home/etienne/.nuget/packages/microsoft.net.test.sdk/16.11.0/microsoft.net.test.sdk.16.11.0.nupkg.sha512",
