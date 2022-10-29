@@ -4,7 +4,7 @@ using System.Security.Cryptography;
 
 public class SaveData
 {
-    public static async Task SaveTodoItems(List<TodoItem> todoItems)
+    public static async Task SaveTodoItems(object todoItems)
     {
         Console.WriteLine("now in save func");
 
