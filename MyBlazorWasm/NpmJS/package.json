@@ -1,0 +1,20 @@
+{
+  "name": "npmjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack ./src/index.js --output-path ../wwwroot/js --output-filename index.bundle.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "igniteui-webcomponents-core": "^3.2.4",
+    "igniteui-webcomponents-gauges": "^3.2.4"
+  }
+}

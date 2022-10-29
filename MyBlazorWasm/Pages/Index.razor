@@ -1,0 +1,51 @@
+﻿@page "/"
+@inject IJSRuntime JSRuntime;
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<button @onclick="OnClickText">Get me some text</button>
+
+<div>
+    @MyText
+</div>
+
+<div>
+
+    <input type="number" class="form-control" @bind=@gaugeValue @bind:event="oninput" @onchange="OnChangeGauge">
+
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: @gaugeValue%" aria-valuenow="@gaugeValue"
+            aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <igc-radial-gauge id="rg" height="400px" width="400px" value="25" interval="5" minimum-value="0"
+        maximum-value="100">
+        <igc-radial-gauge-range start-value="0" end-value="30" brush="red"></igc-radial-gauge-range>
+        <igc-radial-gauge-range start-value="30" end-value="60" brush="yellow"></igc-radial-gauge-range>
+        <igc-radial-gauge-range start-value="60" end-value="100" brush="green"></igc-radial-gauge-range>
+    </igc-radial-gauge>
+
+</div>
+
+@code {
+    private MarkupString MyText = new MarkupString("No Value");
+    private int gaugeValue = 50;
+
+    private async void OnChangeGauge()
+    {
+        Console.WriteLine("value is: {0}", gaugeValue);
+
+        await JSRuntime.InvokeVoidAsync("updateValue", gaugeValue);
+    }
+
+    private async Task OnClickText()
+    {
+        var retr = await JSRuntime.InvokeAsync<string>("StringFromJS");
+
+        MyText = new MarkupString(retr);
+    }
+}
