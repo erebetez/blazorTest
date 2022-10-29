@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "VqpcNjPEzVyOZ6CvAGXs1PPfmcpCG6I2IlEmk8kaq9mObpRYk8sGLCwZtqAsXBxQlgSed9xI70MEAAFrbV/2bw==",
+  "dgSpecHash": "LLQIkfx6DLodU1rV1Np2Q3EajdX0ESUgR9wUQ/Nlk/SyG3vwxy5NJBBtyv15c5e2X8uo985xh9LQljVAsV8yiQ==",
   "success": true,
   "projectFilePath": "/home/etienne/Data/Programming/dotnet/blazor/MyBlazorApp/MyBlazorApp.csproj",
   "expectedPackageFiles": [
-    "/home/etienne/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.9/microsoft.aspnetcore.app.ref.6.0.9.nupkg.sha512"
+    "/home/etienne/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.10/microsoft.aspnetcore.app.ref.6.0.10.nupkg.sha512"
   ],
   "logs": []
 }

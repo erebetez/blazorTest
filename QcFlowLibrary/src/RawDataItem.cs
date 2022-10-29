@@ -4,13 +4,13 @@ public class RawDataItem
 
     public string? Context { get; set; }
 
-    public int? ReplicateId { get; set; }
+    public int ReplicateId { get; set; } = 0;
 
-    public int? DilutionId { get; set; }
+    public int DilutionId { get; set; } = 0;
 
-    public int? TimePoint { get; set; }
+    public int TimePoint { get; set; } = 0;
 
-    public int? Position { get; set; }
+    public int Position { get; set; } = 0;
 
     public string? PositionName { get; set; }
 

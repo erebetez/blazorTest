@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "tWJbdCiPPD3FypVlBnarhIpP3etU+MlKjIMouPsq9Ljg3k4fDkZNQB4mzwwXxntPK4rJSizXaxWR9ZCz5AyjsA==",
+  "dgSpecHash": "MjErVyRo+zHDNqHbtkdqTnYBdalAJxLoZBYKdaCEQd8qbxVsv9/mfggg1OqDzbPUASJnNQv8jP00HXScVq+rbQ==",
   "success": true,
   "projectFilePath": "/home/etienne/Data/Programming/dotnet/blazor/MyBlazorApp.Tests/MyBlazorApp.Tests.csproj",
   "expectedPackageFiles": [
@@ -97,7 +97,7 @@
     "/home/etienne/.nuget/packages/xunit.extensibility.core/2.4.1/xunit.extensibility.core.2.4.1.nupkg.sha512",
     "/home/etienne/.nuget/packages/xunit.extensibility.execution/2.4.1/xunit.extensibility.execution.2.4.1.nupkg.sha512",
     "/home/etienne/.nuget/packages/xunit.runner.visualstudio/2.4.3/xunit.runner.visualstudio.2.4.3.nupkg.sha512",
-    "/home/etienne/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.9/microsoft.aspnetcore.app.ref.6.0.9.nupkg.sha512"
+    "/home/etienne/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.10/microsoft.aspnetcore.app.ref.6.0.10.nupkg.sha512"
   ],
   "logs": []
 }

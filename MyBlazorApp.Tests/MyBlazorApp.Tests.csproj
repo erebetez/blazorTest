@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MyBlazorApp\MyBlazorApp.csproj" />
+    <ProjectReference Include="..\QcFlowLibrary\QcFlowLibrary.csproj" />
   </ItemGroup>
 
 </Project>
