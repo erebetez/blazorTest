@@ -1,0 +1,7 @@
+Debug/
+bin/
+obj/
+node_modules/
+.*
+
+
