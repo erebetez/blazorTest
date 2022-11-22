@@ -1,0 +1,25 @@
+@page "/matrix"
+
+<PageTitle>Matrix</PageTitle>
+
+<h1>Matrix</h1>
+
+<div>    
+    
+    @foreach(String color in _colorList) {
+        Console.WriteLine("color is: {0}", @color);        
+        <Pixel Color = "@color"/>
+    }
+
+</div>
+
+<hr />
+
+@code {
+    private String[] _colorList = {"coral", "Green", "Red", "Blue", "Violet", "Green", "Red", "Purple"};
+
+    @* private void SetColor()
+    {
+        _colorList = {"coral", "Green", "Red", "Blue"};
+    } *@
+}
