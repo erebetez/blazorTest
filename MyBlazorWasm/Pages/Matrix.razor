@@ -7,8 +7,12 @@
 <div>
     <p>Width: @_width</p>
     <p>Height: @_height</p>
-    <p>Pixel count: @_pixelCount</p>
-    <button class="btn btn-primary" @onclick="Init">Init</button>
+    <p>Pixel canvas: @_pixelCount</p>
+    <p>Pixel count: @_pixelList.Count</p>
+    <button class="btn btn-primary" @onclick="_Rainbow">Rainbow</button>
+    <button class="btn btn-primary" @onclick="_Dot">Dot</button>
+    <button class="btn btn-primary" @onclick="_Randomize">Randomize</button>
+    <button class="btn btn-primary" @onclick="_Stop">Stop</button>
 </div>
 
 <hr />
@@ -16,7 +20,7 @@
 <div style = "position: relative;
               width: @_WidthPx();
               height: @_HeightPx();
-              border: 3px solid hsl(200, 100%, 50%);">
+              border: 3px solid hsl(200, 100%, 20%);">
     
     @foreach(Pixel pixel in _pixelList) {
         //Console.WriteLine("pixel is: {0}", @pixel);
@@ -30,12 +34,16 @@
 @code {
     private List<Pixel> _pixelList = new();
 
+    private static Random rng = new Random();
+
     private const int _width = 600;
     private const int _height = 300;
 
     private const int _pixelSize = 10; // TODO duble deffinition, see css file.
 
     private const int _pixelCount = (_height / _pixelSize) * (_width / _pixelSize);
+
+    private bool _isRunning = false;
 
     private string _WidthPx(){
         return $"{_width + 6}px";
@@ -45,11 +53,42 @@
         return $"{_height + 6}px";
     }
 
-    private void Init(){
+    private void _Rainbow(){
         for(int i = 0; i < _pixelCount; i++){
             _pixelList.Add(new Pixel{Color = $"hsl({i % 360}, 100%, 50%)",
                                      X = i * _pixelSize % _width,
                                      Y = i * _pixelSize / _width * _pixelSize});
         }
     }
+
+    private void _Dot(){
+        _pixelList.Add(new Pixel{Color = $"hsl(0, 100%, 30%)",
+                            X = _width / 2,
+                            Y = _height / 2});
+    }
+
+    private void _Randomize(){
+
+        for(int i = 0; i < _pixelList.Count; i++){
+
+            Pixel px = _pixelList[i];
+
+            _pixelList.RemoveAt(i);
+
+            //Console.WriteLine("{0} before: {1}", i, px);
+
+            px.X = rng.Next(_width - _pixelSize + 1);;
+            px.Y = rng.Next(_height - _pixelSize + 1);;
+
+            //Console.WriteLine("{0} after: {1}", i, px);
+
+            _pixelList.Insert(i, px);
+        }
+    }
+
+    private void _Stop(){
+        _isRunning = false;
+        _pixelList.Clear();
+    }
+
 }
