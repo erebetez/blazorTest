@@ -4,11 +4,23 @@
 
 <h1>Matrix</h1>
 
-<div>    
+<div>
+    <p>Width: @_width</p>
+    <p>Height: @_height</p>
+    <p>Pixel count: @_pixelCount</p>
+    <button class="btn btn-primary" @onclick="Init">Init</button>
+</div>
+
+<hr />
+
+<div style = "position: relative;
+              width: @_WidthPx();
+              height: @_HeightPx();
+              border: 3px solid hsl(200, 100%, 50%);">
     
-    @foreach(String color in _colorList) {
-        Console.WriteLine("color is: {0}", @color);        
-        <Pixel Color = "@color"/>
+    @foreach(Pixel pixel in _pixelList) {
+        //Console.WriteLine("pixel is: {0}", @pixel);
+        <PixelWidget Pixel = "@pixel"/>
     }
 
 </div>
@@ -16,10 +28,28 @@
 <hr />
 
 @code {
-    private String[] _colorList = {"coral", "Green", "Red", "Blue", "Violet", "Green", "Red", "Purple"};
+    private List<Pixel> _pixelList = new();
 
-    @* private void SetColor()
-    {
-        _colorList = {"coral", "Green", "Red", "Blue"};
-    } *@
+    private const int _width = 600;
+    private const int _height = 300;
+
+    private const int _pixelSize = 10; // TODO duble deffinition, see css file.
+
+    private const int _pixelCount = (_height / _pixelSize) * (_width / _pixelSize);
+
+    private string _WidthPx(){
+        return $"{_width + 6}px";
+    }
+
+    private string _HeightPx(){
+        return $"{_height + 6}px";
+    }
+
+    private void Init(){
+        for(int i = 0; i < _pixelCount; i++){
+            _pixelList.Add(new Pixel{Color = $"hsl({i % 360}, 100%, 50%)",
+                                     X = i * _pixelSize % _width,
+                                     Y = i * _pixelSize / _width * _pixelSize});
+        }
+    }
 }
