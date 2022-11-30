@@ -4,6 +4,8 @@ public class Pixel
     public int X { get; set; } = 0;
     public int Y { get; set; } = 0;
 
+    public string Type { get; set; } = "background";
+
     public override string ToString() => $"top: {Y}px; left: {X}px; background-color: {Color};";
 
 }

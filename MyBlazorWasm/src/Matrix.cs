@@ -52,22 +52,26 @@ public class Matrix
         {
             Color = $"hsl(0, 100%, 30%)",
             X = _width / 2,
-            Y = _height / 2
+            Y = _height / 2,
+            Type = "player"
         });
     }
 
-    public void Randomize()
+    public void Randomize(String type)
     {
         stopWatch.Reset();
         stopWatch.Start();
 
         _pixelList = _pixelList.Select(px =>
-            new Pixel
+        {
+            if (px.Type.Equals(type))
             {
-                Color = px.Color,
-                X = rng.Next(_width / _pixelSize) * _pixelSize,
-                Y = rng.Next(_height / _pixelSize) * _pixelSize
+                px.X = rng.Next(_width / _pixelSize) * _pixelSize;
+                px.Y = rng.Next(_height / _pixelSize) * _pixelSize;
             }
+
+            return px;
+        }
         ).ToList();
 
         stopWatch.Stop();

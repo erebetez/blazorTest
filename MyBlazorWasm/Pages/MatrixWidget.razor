@@ -10,7 +10,8 @@
     <p>Pixel count: @_matrix.PixelList().Count()</p>
     <button class="btn btn-primary" @onclick="_Rainbow">Rainbow</button>
     <button class="btn btn-primary" @onclick="_Dot">Dot</button>
-    <button class="btn btn-primary" @onclick="_Randomize">Randomize</button>
+    <button class="btn btn-primary" @onclick="_RandomizePlayer">Randomize Player</button>
+    <button class="btn btn-primary" @onclick="_RandomizeRainbow">Randomize Background</button>
     <button class="btn btn-primary" @onclick="_Stop">Stop</button>
 </div>
 
@@ -56,8 +57,12 @@
         _matrix.AddDot();        
     }
 
-    private void _Randomize(){
-        _matrix.Randomize();
+    private void _RandomizePlayer(){
+        _matrix.Randomize("player");
+    }
+
+    private void _RandomizeRainbow(){
+        _matrix.Randomize("background");
     }
 
     private void _Stop(){
