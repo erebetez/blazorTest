@@ -23,7 +23,9 @@
     
     @foreach(Pixel pixel in _matrix.PixelList()) {
         //Console.WriteLine("pixel is: {0}", @pixel);
-        <PixelWidget Pixel = "@pixel"/>
+        <PixelWidget Pixel = "@pixel"
+                     OnPixelClick = "_pixelCallback"
+        />
     }
 
 </div>
@@ -34,7 +36,9 @@
 
     private Matrix _matrix = new Matrix();
 
-    private bool _isRunning = false;
+    private void _pixelCallback(Pixel px){
+        Console.WriteLine("pixel is: {0}", px);
+    }
 
     private string _WidthPx(){
         return $"{_matrix.Width() + 6}px";

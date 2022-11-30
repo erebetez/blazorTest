@@ -1,9 +1,19 @@
 
 <div class = "pixel"
      style = "@Pixel"
+     @onclick = "_clicked"
     />
 
 @code {
     [Parameter]    
-    public Pixel Pixel { get; set; } = new Pixel{Color = "red", X = 0, Y = 0};    
+    public Pixel Pixel { get; set; } = new Pixel{Color = "red", X = 0, Y = 0};
+
+    [Parameter]
+    public EventCallback<Pixel> OnPixelClick { get; set; }
+
+
+    private async Task _clicked(MouseEventArgs e){
+
+        await OnPixelClick.InvokeAsync(Pixel);
+    }
 }
