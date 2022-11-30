@@ -32,9 +32,8 @@
 <hr />
 
 @code {
-    private List<Pixel> _pixelList = new();
 
-    private static Random rng = new Random();
+    private List<Pixel> _pixelList = new();
 
     private const int _width = 600;
     private const int _height = 300;
@@ -68,22 +67,7 @@
     }
 
     private void _Randomize(){
-
-        for(int i = 0; i < _pixelList.Count; i++){
-
-            Pixel px = _pixelList[i];
-
-            _pixelList.RemoveAt(i);
-
-            //Console.WriteLine("{0} before: {1}", i, px);
-
-            px.X = rng.Next(_width - _pixelSize + 1);;
-            px.Y = rng.Next(_height - _pixelSize + 1);;
-
-            //Console.WriteLine("{0} after: {1}", i, px);
-
-            _pixelList.Insert(i, px);
-        }
+        _pixelList = PixelRandom.Randomize(_pixelList, _width, _height, _pixelSize);
     }
 
     private void _Stop(){
