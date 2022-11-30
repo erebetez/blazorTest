@@ -1,0 +1,63 @@
+@page "/matrix"
+
+<PageTitle>Matrix</PageTitle>
+
+<h1>Matrix</h1>
+
+<div>
+    <p>Width: @_matrix.Width()</p>
+    <p>Height: @_matrix.Height()</p>
+    <p>Pixel count: @_matrix.PixelList().Count()</p>
+    <button class="btn btn-primary" @onclick="_Rainbow">Rainbow</button>
+    <button class="btn btn-primary" @onclick="_Dot">Dot</button>
+    <button class="btn btn-primary" @onclick="_Randomize">Randomize</button>
+    <button class="btn btn-primary" @onclick="_Stop">Stop</button>
+</div>
+
+<hr />
+
+<div style = "position: relative;
+              width: @_WidthPx();
+              height: @_HeightPx();
+              border: 3px solid hsl(200, 100%, 20%);">
+    
+    @foreach(Pixel pixel in _matrix.PixelList()) {
+        //Console.WriteLine("pixel is: {0}", @pixel);
+        <PixelWidget Pixel = "@pixel"/>
+    }
+
+</div>
+
+<hr />
+
+@code {
+
+    private Matrix _matrix = new Matrix();
+
+    private bool _isRunning = false;
+
+    private string _WidthPx(){
+        return $"{_matrix.Width() + 6}px";
+    }
+
+    private string _HeightPx(){
+        return $"{_matrix.Height() + 6}px";
+    }
+
+    private void _Rainbow(){
+        _matrix.Rainbow();        
+    }
+
+    private void _Dot(){
+        _matrix.AddDot();        
+    }
+
+    private void _Randomize(){
+        _matrix.Randomize();
+    }
+
+    private void _Stop(){
+        _matrix.Clear();        
+    }
+
+}
